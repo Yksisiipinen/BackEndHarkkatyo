@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+	<title>Tehdyt kotityöt</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+
+<body>
+
+	<h1>Tehdyt kotityöt</h1>
+	<form th:action="@{/logout}" method="post">
+		<input type="submit" value="Kirjaudu ulos" class="btn btn-sm btn-danger" />
+	</form>
+<br>
+	<table class="table table-striped">
+		<tr>
+			<th>Tekijän nimi</th>
+			<th>Kotityö</th>
+			<th>Käytetty aika</th>
+			<th>Kategoria</th>
+		</tr>
+		<tr th:each="kotityo : ${kotityot}">
+			<td th:text="${kotityo.tekija}"></td>
+			<td th:text="${kotityo.tyonNimi}"></td>
+			<td th:text="${kotityo.kesto}"></td>
+			<!-- <td th:text="${kotityo.kategoria != null} ? ${kotityo.kategoria.katNimi} : 'null value!'"></td> -->
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${kotityo.id})}"
+					class="btn btn-danger">Poista</a></td>
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/muokkaa/{id}(id=${kotityo.id})}"
+					class="btn btn-success">Muokkaa</a></td>
+
+		</tr>
+	</table>
+	<a href="/lisaatyo" class="btn btn-success">Lisää kotityö</a>
+
+</body>
+
+</html>

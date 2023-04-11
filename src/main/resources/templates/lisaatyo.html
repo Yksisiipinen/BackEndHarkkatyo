@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Lisää uusi kotityö</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link type="text/css" rel="stylesheet" href="/css/bootstrap.min.css" th:href="@{/css/bootstrap.min.css}" />
+</head>
+<body>
+	<h1>Lisää uusi kotityö</h1>
+	<div>
+	<form action="#" th:object="${uusiKotityo}" th:action="@{/tallennaKotityo}" method="post">
+		<div>
+			<label for ="tekija">Tekijän nimi</label>
+			<input type ="text" id="tekija" th:field="*{tekija}" />
+		</div>
+		<div>
+			<label for ="tyonNimi">Tehty kotityö</label>
+			<input type ="text" id ="tyonNimi" th:field="*{tyonNimi}" />
+		</div>
+		<div>
+			<label for ="kesto">Käytetty aika (minuutteina)</label>
+			<input type ="number" min ="15" max="120" id="kesto" th:field="*{kesto}" />
+			<div th:if="${#fields.hasErrors('kesto')}" th:errors="*{kesto}">Virhe ilmoitetussa ajassa</div>
+		</div>
+		<!-- <div>
+			<label for ="kategoriat">Kotityön kategoria</label>
+			<select id="kategoriat" th:field="*{kategoria}">
+			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.id}"	th:text="${kategoria.katNimi}"></option>
+			</select>
+		</div> -->
+			
+		<input type="submit" value="Tallenna"></input>
+	</form>
+	
+	</div>
+
+ 	
+</body>
+</html>

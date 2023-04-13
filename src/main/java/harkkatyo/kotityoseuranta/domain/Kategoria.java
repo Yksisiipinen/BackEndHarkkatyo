@@ -63,7 +63,7 @@ public class Kategoria {
 
 	@Override
 	public String toString() {
-		return "kategoria [id=" + kategoriaid + ", katNimi=" + katNimi + "]";
+		return "kategoria [kategoriaid=" + kategoriaid + ", katNimi=" + katNimi + "]";
 	}
 	
 	

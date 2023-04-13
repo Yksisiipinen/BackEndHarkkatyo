@@ -25,9 +25,9 @@
 			<td th:text="${kotityo.tyonNimi}"></td>
 			<td th:text="${kotityo.kesto}"></td>
 			<!-- <td th:text="${kotityo.kategoria != null} ? ${kotityo.kategoria.katNimi} : 'null value!'"></td> -->
-			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${kotityo.id})}"
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/delete/{id}(id=${kotityo.kotityoid})}"
 					class="btn btn-danger">Poista</a></td>
-			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/muokkaa/{id}(id=${kotityo.id})}"
+			<td sec:authorize="hasAuthority('ADMIN')"><a th:href="@{/muokkaa/{id}(id=${kotityo.kotityoid})}"
 					class="btn btn-success">Muokkaa</a></td>
 
 		</tr>

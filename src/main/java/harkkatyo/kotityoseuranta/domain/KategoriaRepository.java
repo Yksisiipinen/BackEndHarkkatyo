@@ -5,5 +5,5 @@ import java.util.List;
 import org.springframework.data.repository.CrudRepository;
 
 public interface KategoriaRepository extends CrudRepository<Kategoria, Long> {
-	List<Kategoria> findByKatNimi(String katNimi);
+	List<Kategoria> findBykatNimi(String katNimi);
 }

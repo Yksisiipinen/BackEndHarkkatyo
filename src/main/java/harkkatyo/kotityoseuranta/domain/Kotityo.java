@@ -11,7 +11,7 @@ import javax.persistence.ManyToOne;
 public class Kotityo {
 	@Id
 	@GeneratedValue(strategy=GenerationType.AUTO) //IDENTITY
-	private Long id;
+	private Long kotityoid;
 	private String tekija, tyonNimi;
 	private int kesto;
 	
@@ -24,7 +24,7 @@ public class Kotityo {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Kotityo(Long id, String tekija, String tyonNimi, int kesto) {
+	public Kotityo(String tekija, String tyonNimi, int kesto) {
 		super();
 		this.tekija = tekija;
 		this.tyonNimi = tyonNimi;
@@ -39,13 +39,12 @@ public class Kotityo {
 		this.kategoria = kategoria;
 	}
 
-
-	public Long getId() {
-		return id;
+	public Long getKotityoid() {
+		return kotityoid;
 	}
 
-	public void setId(Long id) {
-		this.id = id;
+	public void setKotityoid(Long kotityoid) {
+		this.kotityoid = kotityoid;
 	}
 
 	public String getTekija() {
@@ -74,9 +73,6 @@ public class Kotityo {
 
 	@Override
 	public String toString() {
-		return "Kotityo [id=" + id + ", tekija=" + tekija + ", tyonNimi=" + tyonNimi + ", kesto=" + kesto + "]";
+		return "Kotityo [kotityoid=" + kotityoid + ", tekija=" + tekija + ", tyonNimi=" + tyonNimi + ", kesto=" + kesto + "]";
 	}
-	
-	
-
 }

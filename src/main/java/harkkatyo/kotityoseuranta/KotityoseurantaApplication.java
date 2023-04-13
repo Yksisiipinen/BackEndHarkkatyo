@@ -33,7 +33,7 @@ public class KotityoseurantaApplication implements CommandLineRunner {
 			kategoriaRepo.save(new Kategoria("Keittiö"));
 			kategoriaRepo.save(new Kategoria ("Ulkoilu"));
 			
-			kotityoRepo.save(new Kotityo("Selina", "Huoneen siivous", 30, kategoriaRepo.findByKatNimi("Siivous").get(0)));
+			kotityoRepo.save(new Kotityo("Selina", "Huoneen siivous", 30, kategoriaRepo.findBykatNimi("Siivous").get(0)));
 			
 			ApinKayttaja kayt1 = new ApinKayttaja("user", "$2a$10$IBt5MGTYmk6jUZcs4lshlOKNMXcGCohAdVkQiuBadEq2KR6XBM1OC", "USER");
 			ApinKayttaja kayt2 = new ApinKayttaja("admin", "$2a$10$P.5NWleCZCUsolOWdB834.ISIICazrZlRVAQi4vRZf1LZGZogRlju", "ADMIN");

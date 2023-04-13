@@ -23,11 +23,11 @@ public class WebSecurityConfig {
     private static final AntPathRequestMatcher[] WHITE_LIST_URLS = {
             new AntPathRequestMatcher("/api/**"),
             new AntPathRequestMatcher("/h2-console/**"),
-            new AntPathRequestMatcher("/books/**")
+            new AntPathRequestMatcher("/kotityot/**")
     };
 	
 	private static final AntPathRequestMatcher[] ADMIN_LIST_URLS = {
-            new AntPathRequestMatcher("/editBook/**")
+            new AntPathRequestMatcher("/muokkaus/**")
     };
 	
     @Bean

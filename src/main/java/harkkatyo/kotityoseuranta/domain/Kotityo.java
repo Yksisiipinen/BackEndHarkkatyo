@@ -26,7 +26,6 @@ public class Kotityo {
 
 	public Kotityo(Long id, String tekija, String tyonNimi, int kesto) {
 		super();
-		this.id = id;
 		this.tekija = tekija;
 		this.tyonNimi = tyonNimi;
 		this.kesto = kesto;

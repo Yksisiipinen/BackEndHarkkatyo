@@ -23,11 +23,11 @@
 			<div th:if="${#fields.hasErrors('kesto')}" th:errors="*{kesto}">Virhe ilmoitetussa ajassa</div>
 		</div>
 		<!-- <div>
-			<label for ="kategoriat">Kotityön kategoria</label>
+			<label>Kategoria</label>
 			<select id="kategoriat" th:field="*{kategoria}">
-			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.id}"	th:text="${kategoria.katNimi}"></option>
+			<option th:each="kategoria: ${kategoriat}" th:value="${kategoria.kategoriaid}"	th:text="${kategoria.katNimi}"></option>
 			</select>
-		</div> -->
+		</div> --> 
 			
 		<input type="submit" value="Tallenna"></input>
 	</form>

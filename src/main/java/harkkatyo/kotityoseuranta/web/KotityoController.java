@@ -19,7 +19,7 @@ import harkkatyo.kotityoseuranta.domain.Kotityo;
 @Controller
 public class KotityoController {
 	@Autowired
-	private KotityoRepository kotityoRepo;
+	KotityoRepository kotityoRepo;
 	
 	@Autowired
 	KategoriaRepository kategoriaRepo;

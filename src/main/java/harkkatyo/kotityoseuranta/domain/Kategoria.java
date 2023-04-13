@@ -15,7 +15,7 @@ public class Kategoria {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private Long id;
+	private Long kategoriaid;
 	private String katNimi;
 	
 	@OneToMany(cascade = CascadeType.ALL, mappedBy = "kategoria")
@@ -31,18 +31,18 @@ public class Kategoria {
 		this.katNimi = katNimi;
 	}
 	
-	public Kategoria(Long id, String katNimi) {
+	public Kategoria(String katNimi, List<Kotityo> kotityot) {
 		super();
-		this.id = id;
 		this.katNimi = katNimi;
+		this.kotityot = kotityot;
+	}
+	
+	public Long getKategoriaid() {
+		return kategoriaid;
 	}
 
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+	public void setKategoriaid(Long kategoriaid) {
+		this.kategoriaid = kategoriaid;
 	}
 
 	public String getKatNimi() {
@@ -52,10 +52,18 @@ public class Kategoria {
 	public void setKatNimi(String katNimi) {
 		this.katNimi = katNimi;
 	}
+	
+	public List<Kotityo> getKotityot() {
+		return kotityot;
+	}
+
+	public void setKotityot(List<Kotityo> kotityot) {
+		this.kotityot = kotityot;
+	}
 
 	@Override
 	public String toString() {
-		return "kategoria [id=" + id + ", katNimi=" + katNimi + "]";
+		return "kategoria [id=" + kategoriaid + ", katNimi=" + katNimi + "]";
 	}
 	
 	
